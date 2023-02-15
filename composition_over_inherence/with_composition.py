@@ -1,13 +1,13 @@
 """
 Very advanced Employee management system.
 """
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from typing import Protocol
 
-
-class PaymentSource(Protocol):
-    def compute_pay(self) -> int:
-        ...
+class PaymentSource(ABC):
+  @abstractmethod
+  def compute_pay(self) -> int:
+        pass
 
 
 @dataclass
